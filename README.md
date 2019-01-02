@@ -82,7 +82,7 @@ jp.specification.calzone.examples[0].name'
 =>"burrito"
 ````
 
-We can find out keys at any level of the document by using the `keys` method.  If the referenced element is a container of other elements, the keys it contains are returned by the keys method.  If the element contains an array, '[]' is returned. Elements which return a scalar value will result in an undefined method error.
+Obtain the keys to any branch of the json document using the `keys` method.  If the referenced element is a container of other elements, the keys it contains are returned by the keys method.  If the element contains an array, '[]' is returned. If the keys method is called on an element whose value is a scalar, an undefined method error will result.
 
 ```
 `puts jp.specification.calzone.keys` 
@@ -96,13 +96,15 @@ jp.specification.calzone.sides.keys
 ```
 
 
-If we request a key which is the root of another branch, the branch is returned as a JsonParse:
+Dot notation is used to access the value of an element in the json docuemnt.  if the element is a key to another set of json elements, a new JsonParse is created and returned to the caller.
+  
 ```Ruby
-branch=jp.specification.calzone
+branch=jp.specification.calzone #brach contains a new JsonParse object
+branch.keys  #[:sides, :examples, :names]
 branch.sides
 => 6
 ````
-If an element contains the array will be returned as an array of JsonParse, and its elements can be accessed as described above.
+If the referenced element contains an array, it will be retrieved as an array of JsonParse.  Its elements can be accessed by index.  The keys method can be used on the indexed element to reveal the available symbols.
 ``` 
 examples = jp.specification.calzone.examples 
 puts examples[1].keys
@@ -112,7 +114,7 @@ puts "#{examples[1].name}  type:  #{examples[1].type}"
 => "corn dog  type:  calzone"
 ```
 
-You can iterate the contents of array within the json document using the each method:
+JsonParse arrays can be interated with the `each` method.  
 ```Ruby 
 jp.specification.salad.examples.each do |example| puts example.name end`
 
