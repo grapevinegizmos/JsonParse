@@ -124,9 +124,14 @@ fried rice
 poutine
 ```
 
-
-
+In additions to `keys`, JsonParse wraps the convenience methods `length` & `count` to return the number of keys in a document element, or the number of items in an array element. The `rootkey` method returns the name of the singular document root element (if present). 
  
+The `hash` and `json_string` methods return a hash and json representation of the object respectively.
+These methods can be useful to extract the relevant portion of a subbracnch and generate new json representation of just that branch.  The `source` method returns the string or hash supplied when the object was initialized.   
+
+Because some of these methods may also represent keys in a json string (viz. `count`, `keys`, `source`), if a matching key exists as an attribute name, the attribute value will be returned instead of the method's value. 
+Appending a '!' to the method name (viz `count!`, `keys!`, `hash!`) will return the intended method result irrespective of the presence of an identical key in the json document.
+
 
 ## Development
 
