@@ -8,7 +8,7 @@ JsonParse is a gem for use in Rails to discover and navigate json documents with
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'JsonParse'
+gem 'json_parse'
 ```
 
 And then execute:

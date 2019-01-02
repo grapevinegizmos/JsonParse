@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["grapevinegizmos@gmail.com"]
 
   spec.summary       = "Easy to use JsonParser for Rails"
-  spec.description   = "Load JsonParse with a json string, and then refer to elements with dot notation."
+  spec.description   = "Load JsonParse with a json string or hash, and then refer to elements with dot notation."
   spec.homepage      = "https://github.com/grapevinegizmos/JsonParse"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
     spec.metadata["homepage_uri"] = spec.homepage
     spec.metadata["source_code_uri"] = "https://github.com/grapevinegizmos/JsonParse.git"
