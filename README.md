@@ -77,7 +77,7 @@ Pretty printing the hash using jp.hash gives a comprehensible view.
 We can retrieve the value of any node by following the tree:
 ```Ruby
 jp.specification.toast.sides
-=> 6
+=> 1
 jp.specification.calzone.examples[0].name'
 =>"burrito"
 ````
